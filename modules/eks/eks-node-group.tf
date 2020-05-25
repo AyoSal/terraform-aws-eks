@@ -4,9 +4,13 @@ resource "aws_eks_node_group" "eks-node-group" {
   node_role_arn   = "${aws_iam_role.node.arn}"
   subnet_ids      = data.aws_subnet_ids.private.ids
   scaling_config {
-    desired_size = 1
-    max_size     = 1
+    desired_size = 2
+    max_size     = 5
     min_size     = 1
+  }
+
+  tags = {
+    Name = "${var.cluster-name}-node-group"
   }
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Node Group handling.

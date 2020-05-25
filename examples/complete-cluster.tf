@@ -18,11 +18,11 @@ module "eks" {
   aws-region              = "us-east-1"
   availability-zones      = ["us-east-1a", "us-east-1b", "us-east-1c"]
   cluster-name            = "my-cluster"
-  k8s-version             = "1.13"
+  k8s-version             = "1.14"
   node-instance-type      = "t3.medium"
   desired-capacity        = 3
   max-size                = 5
-  min-size                = 1
+  min-size                = 3
   public-min-size         = 1
   public-max-size         = 5
   public-desired-capacity = 3

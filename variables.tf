@@ -1,7 +1,7 @@
 # Variables Configuration
 
 variable "cluster-name" {
-  default     = "eks-cluster"
+  default     = "qohashing-eks-cluster"
   type        = string
   description = "The name of your EKS Cluster"
 }
@@ -13,13 +13,13 @@ variable "aws-region" {
 }
 
 variable "availability-zones" {
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  default     = ["us-east-1a", "us-east-1b"]
   type        = list
   description = "The AWS AZ to deploy EKS"
 }
 
 variable "k8s-version" {
-  default     = "1.13"
+  default     = "1.14"
   type        = string
   description = "Required K8s version"
 }
@@ -68,7 +68,7 @@ variable "eks-cw-logging" {
 }
 
 variable "node-instance-type" {
-  default     = "m4.large"
+  default     = "t2.micro"
   type        = string
   description = "Worker Node EC2 instance type"
 }
@@ -87,7 +87,7 @@ variable "desired-capacity" {
 }
 
 variable "max-size" {
-  default     = 5
+  default     = 3
   type        = string
   description = "Autoscaling maximum node capacity"
 }
